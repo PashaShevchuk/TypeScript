@@ -138,3 +138,22 @@ class Developer extends Person {
 }
 
 const Bobby = new Developer('Bobby', 30, 'lenovo');
+
+//______________________________________________________________________________________________________________________
+const obj = {
+    name: 'Mary',
+    age: 24,
+    job: 'React developer',
+    laptop: {
+        model: 'Lenovo',
+        processor: {
+            model: 'Intel',
+            price: 1000,
+        }
+    }
+};
+
+console.log(obj && obj.laptop && obj.laptop.model && obj.laptop.model); // in JS
+
+console.log(obj?.laptop?.model); // in TS
+//______________________________________________________________________________________________________________________
