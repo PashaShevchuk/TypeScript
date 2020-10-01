@@ -100,7 +100,7 @@ const Mary: IUser = {
 };
 
 
-const userArr: IUser[] = [Bob, John]; // або const userArr: Array<IUser> = [Bob, John];
+const userArr: IUser[] = [Bob, John, Mary]; // або const userArr: Array<IUser> = [Bob, John];
 
 function oldestUser(users: IUser[]): IUser {
     return users.sort((a, b) => b.age - a.age)[0];
@@ -110,7 +110,7 @@ const oldUser = oldestUser(userArr);
 console.log(oldUser); // { name: 'Bob', age: 33 }
 
 //______________________________________________________________________________________________________________________
-// Абстрактний клас - це клас екземпляр якгого не можна зробити, він нього можна тільни наслідуватися.
+// Абстрактний клас - це клас екземпляр якгого не можна зробити, від нього можна тільни наслідуватися.
 
 abstract class Person {
     name: string;
@@ -168,5 +168,14 @@ const login: Login = 'pavlo2020';
 // const login2: Login = 2;  // error Type '2' is not assignable to type 'string'.
 
 //______________________________________________________________________________________________________________________
+interface IPerson {
+    name: string;
+    age: number;
+}
 
+type PersonKeys = keyof IPerson; // 'name' | 'age'
+
+let key: PersonKeys = 'name';
+key = 'age';
+// key = 'email'; // error Type '"email"' is not assignable to type '"name" | "age"'.
 //______________________________________________________________________________________________________________________
