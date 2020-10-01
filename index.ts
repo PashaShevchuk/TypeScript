@@ -156,4 +156,13 @@ const obj = {
 console.log(obj && obj.laptop && obj.laptop.model && obj.laptop.model); // in JS
 
 console.log(obj?.laptop?.model); // in TS
+
+//______________________________________________________________________________________________________________________
+// type - дозволяє створювати власні типи
+type Login = string;
+
+const login: Login = 'pavlo2020';
+// const login2: Login = 2;  // error Type '2' is not assignable to type 'string'.
+
+
 //______________________________________________________________________________________________________________________
